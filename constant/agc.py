@@ -1,4 +1,3 @@
-# Ánh xạ giá trị số thành khoảng tuổi
 AGE_MAPPING = {
     0: "0-9",
     1: "10-19",
@@ -9,13 +8,11 @@ AGE_MAPPING = {
     6: "60+"
 }
 
-# Ánh xạ giá trị số thành giới tính
 GENDER_MAPPING = {
     0: "Male",
     1: "Female"
 }
 
-# Ánh xạ giá trị số thành chủng tộc
 RACE_MAPPING = {
     0: "Asian",
     1: "Black",
@@ -23,3 +20,12 @@ RACE_MAPPING = {
     3: "Indian",
     4: "Other"
 }
+
+def map_age(age):
+    return AGE_MAPPING.get(age, str(age))
+
+def map_gender(gender):
+    return GENDER_MAPPING.get(gender, str(gender))
+
+def map_race(race):
+    return RACE_MAPPING.get(race, str(race))

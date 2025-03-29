@@ -1,8 +1,10 @@
 import cv2
 from facexformer_pipeline import FacexformerPipeline
+from constant.agc import map_age, map_gender, map_race
 from services.data_processing import detect_faces
 from services.facexformer_services import agc_detection 
 from services.opencv_camera import get_camera_frame
+
 
 def live_video_detection():
     cap = cv2.VideoCapture(0)  # Mở camera
@@ -20,7 +22,10 @@ def live_video_detection():
             break
 
         if detected_result:
-            text = f"Age: {detected_result['age']} | Gender: {detected_result['gender']} | Race: {detected_result['race']}"
+            age_display = map_age(detected_result['age'])
+            gender_display = map_gender(detected_result['gender'])
+            race_display = map_race(detected_result['race'])
+            text = f"Age: {age_display} | Gender: {gender_display} | Race: {race_display}"
             cv2.putText(frame, text, (20, 50), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 2)
 
         # Hiển thị frame
