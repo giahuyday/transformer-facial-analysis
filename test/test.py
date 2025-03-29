@@ -7,7 +7,7 @@ from visual_debugger import VisualDebugger, Annotation, AnnotationType
 pipeline = FacexformerPipeline(tasks=['age_gender_race', 'headpose', 'landmark', 'faceparsing', 'attributes', 'visibility', 'age_gender_race'])
 
 # Put your code for reading an image 
-image_path = "lena.jpg"
+image_path = "../public/lena.jpg"
 uih = UniversalImageInputHandler(image_path)   #  to use UniversalImageInputHandler you need "pip install image_input_handler"
 img = uih.img
 print(img)

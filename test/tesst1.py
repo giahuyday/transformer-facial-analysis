@@ -3,7 +3,7 @@ from image_input_handler import UniversalImageInputHandler
 
 def main():
     # Đường dẫn đến hình ảnh cần xử lý
-    image_path = "captured_image.jpg"
+    image_path = "../public/lena.jpg"
     
     # Xử lý hình ảnh đầu vào
     uih = UniversalImageInputHandler(image_path, debug=False)
