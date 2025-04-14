@@ -1,9 +1,6 @@
 import cv2
-from facexformer_pipeline import FacexformerPipeline
 from constant.agc import map_age, map_gender, map_race
-from services.data_processing import detect_faces
 from services.facexformer_services import agc_detection 
-from services.opencv_camera import get_camera_frame
 
 
 def live_video_detection():

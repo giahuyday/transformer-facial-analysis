@@ -7,7 +7,7 @@ from visual_debugger import VisualDebugger, Annotation, AnnotationType
 pipeline = FacexformerPipeline(tasks=['age_gender_race', 'headpose', 'landmark', 'faceparsing', 'attributes', 'visibility', 'age_gender_race'])
 
 # Put your code for reading an image 
-image_path = "../public/lena.jpg"
+image_path = "../public/MU.jpg"
 uih = UniversalImageInputHandler(image_path)   #  to use UniversalImageInputHandler you need "pip install image_input_handler"
 img = uih.img
 print(img)
@@ -17,15 +17,15 @@ results = pipeline.run_model(img)
 print(results)
 
 # Access the results from results dictionary
-# print(results['headpose'])
-# print(results['landmarks']) 
-# print(results['faceparsing_mask']) 
+print(results['headpose'])
+print(results['landmarks']) 
+print(results['faceparsing_mask']) 
 
 
 # Also you can access intermediate results such as face region crop, face coordinates etc
-# print(results['face_ROI'])
-# print(results['face_coordinates']) 
-# print(results['head_coordinates']) 
+print(results['face_ROI'])
+print(results['face_coordinates']) 
+print(results['head_coordinates']) 
 
 vdebugger = VisualDebugger(tag="facex", debug_folder_path="./result", active=True)
 
